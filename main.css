@@ -1,0 +1,142 @@
+/* Variables */
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+/* Global Rules Start */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.5em;
+  font-family: "Poppins", sans-serif;
+  /* Weights: 200, 400, 600 */
+}
+/* Global Rules End */
+
+/* For Debugging Only Start */
+.debug {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -9;
+  opacity: 0.5;
+  opacity: 0;
+}
+/* For Debugging Only End */
+
+body {
+  background-color: var(--Very-Light-Gray);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+main {
+  width: 87%;
+  max-width: 1100px;
+  margin: 4rem auto;
+}
+.head {
+  text-align: center;
+}
+h1 {
+  font-weight: 200;
+  font-size: 2.5rem;
+  color: var(--Very-Dark-Blue);
+}
+h2 {
+  color: var(--Very-Dark-Blue);
+  margin-bottom: 2rem;
+}
+main p {
+  color: var(--Grayish-Blue);
+}
+.content {
+  margin-top: 6rem;
+}
+.card {
+  background: white;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 19px 0px #dae1e9;
+}
+.card h3 {
+  color: var(--Very-Dark-Blue);
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+}
+.card p {
+  color: var(--Grayish-Blue);
+}
+.card img {
+  margin-left: auto;
+  margin-top: 4rem;
+}
+.card::before {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.supervisor::before {
+  background-color: var(--Cyan);
+}
+.team::before {
+  background-color: var(--Red);
+}
+.karma::before {
+  background-color: var(--Orange);
+}
+.calculator::before {
+  background-color: var(--Blue);
+}
+/* Desktop media */
+@media (min-width: 600px) {
+  .head {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 3.6rem;
+  }
+  h2 {
+    font-size: 3.6rem;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 3rem;
+  }
+  .card h3 {
+    font-size: 2rem;
+  }
+  .card p {
+    font-size: 1.3rem;
+  }
+  .karma {
+    margin-bottom: 0;
+  }
+}
